@@ -5,6 +5,12 @@ import { createProjectManager } from './projectManager';
 import { createNoteManager } from './noteManager';
 import { renderScreen, setupListeners} from './domManager';
 
+function clearData() {
+    if (!localStorage.getItem('todoIdCount')) {
+        localStorage.clear();
+    }
+}
+
 function preloadTodoData() {
     // Need to load template todos if there are none (like when the user first
     // opens the site) 
@@ -36,7 +42,6 @@ function preloadTodoData() {
         const values4 = {title: 'Go to the gym', details: 'Its a push day', dueDate: date3, 
         priority: 'low', isFinished: false, parentProjectId: 0};
         PubSub.publishSync('createTodo', values4);
-
     }
 }
 
@@ -76,8 +81,10 @@ createTodoManager();
 createProjectManager();
 createNoteManager();
 
+clearData();
 createDefaultProjects();
 preloadTodoData();
 preloadNoteData();
 renderScreen();
 setupListeners();
+console.log('testing new version');
