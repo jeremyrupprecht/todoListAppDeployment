@@ -553,8 +553,8 @@ input[type="radio"] {
     flex-direction: column;
 }
 
-.formRowProject > input[type="text"]{
-    background-color: var(--darkBlack);
+input[type="text"] {
+    background-color: blue;
 }
 
 .areYouSureModal {
