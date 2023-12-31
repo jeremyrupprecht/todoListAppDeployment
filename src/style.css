@@ -1,0 +1,686 @@
+:root {
+    --lightBlack: rgba(0, 0, 0, 0.363);
+    --mediumBlack: rgba(0, 0, 0, 0.555);
+    --darkBlack: rgba(0, 0, 0, 0.753);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: lato, sans-serif;
+}
+
+html, body, #content, .backgroundImg {
+    height: 100vh;
+    width: 100vw;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+#content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    border: none;
+    cursor: pointer;    
+}
+
+.backgroundImg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.centerContainerGrid {
+    width: 80rem;
+    height: 41rem;
+
+    display: grid; 
+    grid-template: 70px 1fr / 3fr 8fr;
+}
+
+.topBar {
+    grid-area: 1 / 1 / 2 / 3;
+    background-color: var(--darkBlack);
+    border-radius: 15px 15px 0px 0px;
+    display: flex;
+    align-items: center;
+}
+
+.topBar > p {
+    margin-left: 50px;
+    font-size: 2.3rem;
+}
+
+.sideBar {
+    grid-area: 2 / 1 / 3 / 2;
+    background-color: var(--lightBlack);
+    border-radius: 0px 0px 0px 15px;
+
+    display: flex;
+    flex-direction: column;
+    padding: 50px 50px 50px 50px;
+    gap: 20px;
+}
+
+
+.sideBar > div > p {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.sideBar > div {
+    display: flex;
+}
+
+.todoCountContainer {
+    margin-left: auto;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.todoCountContainer.show {
+    display: flex;
+}
+
+.todoCount {
+    margin-top: 1px;
+}
+
+.projectsSideBarFlexbox {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0px 0px 25px;
+}
+
+.projectHeader.projects {
+    display: flex;
+    flex-direction: column;
+}
+
+.newProjects {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.newProjectContainer {
+    display: grid;
+    grid-template: auto / 1fr 1.8rem;
+}
+
+.newProjectContainer > p {
+    font-size: 1.3rem;
+    cursor: pointer;
+    word-break: break-all;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 25px;
+}
+
+.newProjects > div:last-child {
+    margin-bottom: 20px;
+}
+
+.addProjectButton {
+    height: 24px;
+    width: 24px;
+    background-color: transparent;
+}
+
+.mainSection {
+    grid-area: 2 / 2 / 3 / 3;
+    background-color: var(--mediumBlack);
+    border-radius: 0px 0px 15px 0px;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 100vh;
+}
+
+::-webkit-scrollbar {
+    width: 13px;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--darkBlack);
+    border-radius: 5px;
+}
+
+.todoContainer {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 0px 20px 0px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: calc(100vh - 60px);
+    flex: 1;
+}
+
+.todoItem {
+    background-color: var(--darkBlack);
+    height: 50px;
+    width: 95%;
+    border-radius: 10px;
+    display: flex;
+}
+
+.todoItem:hover {
+    transform: scale(1.01);
+}
+
+.todoLeft, .todoRight {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.todoRight {
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.todoPriority {
+    background-color: green;
+    height: 50px;
+    width: 10px;
+    border-radius: 10px 0px 0px 10px;
+}
+
+input[type="checkbox"], .todoDetails {
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    height: 18px;
+    width: 18px;
+}
+
+.todoDetails {
+    border: 1px solid white;
+    padding: 2px 4px 2px 4px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.todoDetails:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    transition-duration: 0.3s;
+}
+
+.todoDueDate {
+    width: 80px;
+    text-align: center;
+}
+
+.todoButton {
+    height: 24px;
+    width: 24px; 
+    background: none;
+    margin-bottom: 4px;
+}
+
+.todoButton:hover {
+    transform: scale(1.09);
+}
+
+.titleFinished, .dueDateFinished, .buttonFinished, .detailsFinished {
+    color: rgb(163, 163, 163);
+}
+
+.detailsFinished {
+    border: 1px solid rgb(163, 163, 163);
+}
+
+.titleFinished {
+    text-decoration: line-through;
+}
+
+.todoFooter {
+    height: 60px;
+    padding: 20px 20px 15px 20px;
+    
+    display: flex;
+    gap: 10px;
+}
+
+.footerRight {
+    margin-left: auto;
+    display: flex;
+    gap: 10px;
+}
+
+.footerButton {
+    height: 50px;
+    width: 50px;
+    background: none;
+}
+
+.footerButton:hover {
+    transform: scale(1.09);
+}
+
+.editProjectButton {
+    display: none;
+}
+
+.deleteProjectButton {
+    display: none;
+}
+
+.addTodoButton {
+    display: none;
+}
+
+.editProjectButton.show, .deleteProjectButton.show, .addTodoButton.show,
+.addNoteButton.show {
+    display: block;
+}
+
+.createTodoModal {
+
+    position: absolute;
+    background-color: var(--darkBlack);
+    height: clamp(400px, 50%, 700px);
+    width: 80%;
+    max-width: 800px;
+    border-radius: 20px;
+
+    display: none;
+    flex-direction: column;
+    z-index: 2;
+}
+
+.createTodoModal.show, .modalFullScreenOverlay.show, .detailsModal.show,
+.addProjectModal.show, .areYouSureModal.show, .todoContainer.show, .noteColumn.show {
+    display: flex;
+}
+
+.modalFullScreenOverlay {
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.747);
+    pointer-events: auto;
+    z-index: 1;
+}
+
+.modalTitle {
+    background-color: var(--darkBlack);
+    padding: 15px 15px 10px 15px;
+    border-radius: 20px 20px 0px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.createTodoModalCloseIconContainer {
+    margin-left: auto;
+    height: 24px;
+    width: 24px;
+}
+
+.newNoteForm {
+    flex: 1;
+    border-radius: 0px 0px 20px 20px;
+    padding: 20px 20px 0px 20px;
+
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.formRow {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.formRow:nth-child(3) {
+    margin-top: auto;
+}
+
+input[type="text"], textarea {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    height: 1.5rem;
+    outline: none;
+    font-size: 1.3rem;
+}
+
+input[type="text"]::placeholder {
+    color: gray;
+    font-size: 1.3rem;
+}
+
+textarea {
+    font-size: 1.1rem;
+    resize: none;
+    flex: 1;
+    max-height: 160px;
+}
+
+.formRow:nth-child(3) {
+    margin-bottom: 10px;
+}
+
+input[type="date"] {
+    background-color: transparent;
+    border: 1px solid white;
+    padding: 5px 5px 5px 15px;
+    border-radius: 15px;
+    margin-left: 10px;
+    color-scheme: dark;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    color: red;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.radioContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.radioContainer > label {
+    position: absolute;
+    transform:translate(-50%,-50%);
+    top: 28px;
+}
+
+
+.radioContainer > label:nth-child(1) {
+    margin-right: 30px;
+}
+
+.radioContainer label:not(.radioContainer > label:nth-child(1)) {
+    margin-right: 10px;
+    border-radius: 4px;
+}
+
+.radioContainer label:not(.radioContainer > label:nth-child(1)):hover {
+    color: white;
+}
+
+.radioContainer > label:nth-child(3) {
+    border: 1px solid green;
+    color: green;
+    padding: 4px;
+    left: 110px;
+
+}
+
+.radioContainer > label:nth-child(3):hover, #low:checked+label[for="low"]{
+    background-color: green;
+    padding: 6px;
+    color: white;
+}
+
+.radioContainer > label:nth-child(5) {
+    border: 1px solid orange;
+    color: orange;
+    padding: 4px;
+    left: 180px;
+}
+
+.radioContainer > label:nth-child(5):hover, #medium:checked+label[for="medium"] {
+    background-color: orange;
+    padding: 6px;
+    color: white;
+}
+
+.radioContainer > label:nth-child(7) {
+    border: 1px solid red;
+    color: red;
+    padding: 4px;
+    left: 252px;
+}
+
+.radioContainer > label:nth-child(7):hover, #high:checked+label[for="high"] {
+    background-color: red;
+    padding: 6px;
+    color: white;
+}
+
+.submitButtonDiv {
+    margin-left: auto;
+}
+
+.submitButtonDiv > button {
+    background-color: transparent;
+    border: 1px solid white;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.submitButtonDiv > button:hover {
+    background-color: rgba(255, 255, 255, 0.212);
+}
+
+.detailsModal {
+    display: none;
+    position: absolute;
+    background-color: var(--darkBlack);
+    height: clamp(200px, 20%, 300px);
+    width: 70%;
+    max-width: 500px;
+    border-radius: 20px;
+    padding: 20px;
+
+    flex-direction: column;
+    z-index: 2;
+}
+
+.detailsTop {
+    display: flex;
+}
+
+.detailsGrid {
+    display: grid;
+    grid-template: auto auto auto auto / 80px 1fr;
+    gap: 20px;
+    grid-auto-flow: column;
+    margin-top: 20px;
+}
+
+.detailsTitle {
+    font-size: 1.7rem;
+}
+
+.detailsCloseButton {
+    height: 24px;
+    width: 24px;
+    background-color: transparent;
+    margin-left: auto;
+}
+
+.addProjectModal {
+    display: none;
+    position: absolute;
+    background-color: var(--darkBlack);
+    height: 150px;
+    width: 70%;
+    max-width: 500px;
+    border-radius: 20px;
+    padding: 20px;
+
+    flex-direction: column;
+    gap: 20px;
+    z-index: 2;
+}
+
+.addProjectModalTitle {
+    display: flex;
+    justify-content: space-between;
+}
+
+.addProjectModalCloseIconContainer {
+    height: 24px;
+    width: 24px;
+}
+
+.formRowProject {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.areYouSureModal {
+    position: absolute;
+    height: 180px;
+    width: 180px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: var(--darkBlack);
+
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    z-index: 2;
+}
+
+.areYouSureModal > p {
+    text-align: center;
+}
+
+.areYouSureModal button {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: transparent;
+    border: 1px solid white;
+}
+
+.areYouSureModal > div {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.yesButton:hover {
+    background-color: green;
+}
+
+.noButton:hover {
+    background-color: red;
+}
+
+/* Notes */
+
+.notesGrid {
+    padding: 20px;
+    display: none;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    max-height: calc(100vh - 60px);
+    flex: 1;
+}
+
+.notesGrid.twoColumns {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.notesGrid.show {
+    display: grid;
+}
+
+.noteColumn {
+    display: none;
+    flex-direction: column;
+}
+
+.noteItem {
+    height: fit-content;
+    background-color: var(--darkBlack);
+    border-radius: 20px;
+    padding: 15px 20px 20px 20px;
+    margin-bottom: 1rem;
+    white-space: pre-wrap;
+}
+
+.noteItem:hover {
+    transform: scale(1.019);
+}
+
+.noteFlexWidth {
+    display: flex;
+    justify-content: space-between;
+    height: fit-content;
+    overflow-x: hidden;
+    word-break: break-all;
+}
+
+.deleteNoteButton {
+    height: 18px;
+    width: 18px; 
+    background: none;
+    flex-shrink: 0;
+}
+
+.noteTitle {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.noteDetails {
+    padding-bottom: 5px;
+}
+
+.noteTitle:empty:not(:focus):before, 
+.noteDetails:empty:not(:focus):before {
+    content: attr(data-text);
+    color: gray;
+}
+
+.addNoteButton {
+    display: none;
+}
+
+[contenteditable] {
+    outline: 0px solid transparent;
+}
+
+@media only screen and (max-width: 1280px) {
+    .centerContainerGrid {
+        height: 100vh;
+    }
+
+    .topBar, .sideBar, .mainSection {
+        border-radius: 0px;
+    }
+
+    .sideBar {
+        padding: 50px 25px 50px 50px;
+    }
+}

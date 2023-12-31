@@ -1,0 +1,2 @@
+# Ignore packages -- instead locally type "npm install" 
+node_modules/
