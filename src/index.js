@@ -87,4 +87,4 @@ preloadTodoData();
 preloadNoteData();
 renderScreen();
 setupListeners();
-console.log('testing new version');
+console.log('blueeeeee');
