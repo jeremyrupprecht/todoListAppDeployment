@@ -362,7 +362,7 @@ input[type="checkbox"] {
 }
 
 input[type="text"], textarea {
-    background-color: transparent;
+    background-color: var(--darkBlack);
     border: none;
     width: 100%;
     height: 1.5rem;
@@ -551,6 +551,10 @@ input[type="radio"] {
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
+}
+
+.formRowProject > input[type="text"]{
+    background-color: var(--darkBlack);
 }
 
 .areYouSureModal {
