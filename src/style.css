@@ -671,36 +671,9 @@ input[type="radio"] {
     outline: 0px solid transparent;
 }
 
-/* input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
-input:-webkit-autofill:active  {
-    -webkit-box-shadow: 0 0 0 30px white inset !important;
+#titleInput, #projectTitleInput {
+    background-color: var(--darkBlack);
 }
-
-input:-webkit-autofill {
-    -webkit-text-fill-color: yellow !important;
-}
-
-input:-webkit-autofill,
-input:-webkit-autofill:focus {
-  transition: background-color 0s 600000s, color 0s 600000s;
-} */
-
-input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
-input:-webkit-autofill:active  {
-    -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
-    -webkit-transition-delay: 9999s;
-    transition: color 9999s ease-out, background-color 9999s ease-out;
-    transition-delay: 9999s;
-}
-
-#titleInput {
-    background-color: red;
-}
-
 
 @media only screen and (max-width: 1280px) {
     .centerContainerGrid {
