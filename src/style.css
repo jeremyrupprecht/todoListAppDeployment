@@ -676,6 +676,7 @@ input[type="radio"] {
     outline-style: none;
     box-shadow: none;
     border-color: transparent;
+    border: none;
 }
 
 @media only screen and (max-width: 1280px) {

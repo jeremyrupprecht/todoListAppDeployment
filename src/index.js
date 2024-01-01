@@ -87,4 +87,4 @@ preloadTodoData();
 preloadNoteData();
 renderScreen();
 setupListeners();
-console.log('titleandproject');
+console.log('noborder');
