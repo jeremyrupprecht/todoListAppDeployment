@@ -37,6 +37,8 @@ npm run start
 Then navigate to localhost to view the app.
 
 [Live App](https://jeremyrupprecht.github.io/todoListAppDeployment/)
+![Alt text](/screenshot.png?raw=true )
+
 
 ## Contributors
 
