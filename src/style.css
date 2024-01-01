@@ -553,10 +553,6 @@ input[type="radio"] {
     flex-direction: column;
 }
 
-input[type="text"] {
-    background-color: blue;
-}
-
 .areYouSureModal {
     position: absolute;
     height: 180px;
@@ -673,6 +669,10 @@ input[type="text"] {
 
 [contenteditable] {
     outline: 0px solid transparent;
+}
+
+body input[type="text"] {
+    background-color: blue;
 }
 
 input:-webkit-autofill,
