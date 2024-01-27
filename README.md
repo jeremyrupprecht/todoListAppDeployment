@@ -1,5 +1,8 @@
 # // TO-DO: Productivity App
 
+![Alt text](/screenshot1.png?raw=true )
+[Live App](https://jeremyrupprecht.github.io/todoListAppDeployment/)
+
 TO-DO is a todo list web application that can keep track of tasks with custom project folders and notes
 
 * Save to-do items to one of the default folders (Home, Today, Week) or create a custom folder.
@@ -35,10 +38,6 @@ npm run build
 npm run start
 ```
 Then navigate to localhost to view the app.
-
-[Live App](https://jeremyrupprecht.github.io/todoListAppDeployment/)
-![Alt text](/screenshot1.png?raw=true )
-
 
 ## Contributors
 
